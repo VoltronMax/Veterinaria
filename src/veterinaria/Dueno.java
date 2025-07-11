@@ -7,6 +7,18 @@ public class Dueno {
     private String direccion;
     private String telefono;
 
+    public Dueno(){
+
+    }
+
+    public Dueno(String nombre, String apellido, String cedula, String direccion, String telefono){
+        setNombre(nombre);
+        setApellido(apellido);
+        setCedula(cedula);
+        setDireccion(direccion);
+        setTelefono(telefono);
+    }
+
     //Getters
     public String getNombre() {
         return nombre;
@@ -22,6 +34,9 @@ public class Dueno {
     }
     public String getTelefono(){
         return telefono;
+    }
+    public String getResumen(){
+        return "Nombre del dueño: " + nombre + " | Apellido: " + apellido + " | Cedula: " + cedula;
     }
 
     //Setters
@@ -67,11 +82,12 @@ public class Dueno {
     }
 
     //Metodo que imprime los datos del dueño para uso en interfaces y/o resumenes
-    public void MostrarDueño(){
+    public void mostrarDueno(){
         System.out.println("Nombre: " + nombre);
         System.out.println("Apellido: " + apellido);
         System.out.println("Cedula: " + cedula);
         System.out.println("Direccion: " + direccion);
         System.out.println("Telefono: " + telefono);
     }
+
 }

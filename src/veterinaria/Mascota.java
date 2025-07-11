@@ -2,15 +2,19 @@ package veterinaria;
 
 public class Mascota {
     private String nombre;
-    private int edad;
+    private Integer edad;
     private String raza;
     private double peso;
 
+    public Mascota(){
+
+    }
+
     public Mascota(String nombre, int edad, String raza, double peso) {
-        this.nombre = nombre;
-        this.edad = edad;
-        this.raza = raza;
-        this.peso = peso;
+        setNombre(nombre);
+        setEdad(edad);
+        setRaza(raza);
+        setPeso(peso);
     }
 
     //getters
@@ -26,17 +30,20 @@ public class Mascota {
     public double getPeso(){
         return peso;
     }
+    public String getResumenMascota(){
+        return "Nombre de la mascota: " + nombre + " | Raza: " + raza;
+    }
 
     //setters (Con excepciones para evitar datos sin sentido)
     public void setNombre(String nombre){
         if (nombre==null||nombre.isBlank()){
-            throw new IllegalArgumentException("El nombre del dueño no puede estar vacio");
+            throw new IllegalArgumentException("El nombre de la mascota no puede estar vacio");
         } else {
             this.nombre = nombre;
         }
     }
-    public void setEdad(int edad){
-        if(edad<0 || edad>30){
+    public void setEdad(Integer edad){
+        if(edad==null || edad<0 || edad>30){
             throw new IllegalArgumentException("La edad de la mascota debe estar entre 0 y 30 años");
         }
         this.edad = edad;
